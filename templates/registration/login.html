@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Login sahifasi{% endblock title %}
+
+
+
+{% block content %}
+
+<h1 style="color:rgb(255, 81, 0)">Log In</h1>
+<form  method="post">{% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-danger">Login</button>
+</form>
+
+{% endblock content %}
