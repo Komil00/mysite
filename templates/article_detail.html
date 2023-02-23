@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="article-entry">
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.author }} | {{ object.date }}</p>
+    {% if object.photo %}
+    <img src="{{ object.photo.url }}" alt="{{ object.title }}">
+    {% endif %}
+    <p>{{ object.body }}</p>
+</div>
+
+<p>
+    <button type="submit" class="btn btn-success ml-2"><a href="{% url 'article_edit' object.id %}" style="color:rgb(2, 2, 2)">Tahrirlash</a></button>
+    <button type="submit" class="btn btn-success ml-2"><a href="{% url 'article_delete' object.id %}" style="color:rgb(0, 0, 0)">O'chirish</a></button>
+    <p><a href="{% url 'article_list' %}" class="btn btn-primary btn-lg" role="button">Barcha maqolalarni ko'rish</a></p>
+</p>
+
+{% endblock content %}
